@@ -1,5 +1,6 @@
 body {
     padding: 20px;
+    background-image: http://www.prsformusic.com/joinus/PublishingImages/dance-music-producer.jpg;
 }
 #search-form, .form-control {
     margin-bottom: 20px;
@@ -15,4 +16,8 @@ body {
 }
 .cover.playing {
     border: 5px solid #e45343;
+}
+
+h1 {
+  background-color: white;
 }
