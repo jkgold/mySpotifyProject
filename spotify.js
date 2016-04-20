@@ -1,7 +1,7 @@
 $('document').ready(function() {
 
 
-if(document.getElementById('results-template') != null){
+ if(document.getElementById('results-template') != null){
 var templateSource = document.getElementById('results-template').innerHTML,
     template = Handlebars.compile(templateSource),
     resultsPlaceholder = document.getElementById('results'),
@@ -13,9 +13,9 @@ var fetchTracks = function (albumId, callback) {
         url: 'https://api.spotify.com/v1/albums/' + albumId,
         success: function (response) {
             callback(response);
-        }
-      })
-    };
+        // }
+      }
+    });
 };
 
 var searchArtist = function (query) {
@@ -73,8 +73,6 @@ results.addEventListener('click', function (e) {
 document.getElementById('search-form-albums').addEventListener('submit', function (e) {
     e.preventDefault();
     searchAlbums(document.getElementById('query').value);
-}, false);
-
-
-
-})
+    }, false);
+  }
+});

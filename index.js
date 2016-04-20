@@ -1,13 +1,21 @@
 window.onload = function(){
 var user = {};
-$('input').click(function(){
+$('#submitButton').click(function(){
+  // user = {};
+   user.name = document.getElementById('name').value;
+   user.email = document.getElementById('email').value;
+   user.password = document.getElementById('password').value;
+   // user = { name: 'name', email ....}
+   console.log(user.name);
 
-  user.name = getElementById('name').value();
-
+  user = JSON.stringify(user);
+  // user = "{'name' : 'name', ....}";
   localStorage.setItem("user", user);
-  var localUser = localStorage.getItem("nameInfo");
 
+  var localUser = localStorage.getItem("user");
+  //localUser = "{name: 'name',....}"
 
-  console.log(localUser.name);
+  JSON.parse(localUser);
+  console.log(localUser);
 });
 };
